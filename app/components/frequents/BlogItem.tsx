@@ -18,9 +18,9 @@ const CommentItem = ({
   blogAuthor,
   blogCommentsCount,
   blogDate,
-}: {
-  string;
-}) => {
+}: 
+  any
+) => {
   const writeDate = DateComponent(blogDate);
   return (
     <Card className="blog-card">

@@ -2,7 +2,7 @@ import Product from "@/app/models/product";
 import connect from "@/app/utils/db";
 import { NextResponse } from "next/server";
 
-export const GET = async (request) => {
+export const GET = async () => {
   try {
     await connect();
     const products = await Product.aggregate([

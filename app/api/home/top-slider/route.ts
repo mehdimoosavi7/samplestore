@@ -2,7 +2,7 @@ import Banner from "@/app/models/Banner";
 import connect from "@/app/utils/db";
 import { NextResponse } from "next/server";
 
-export const GET = async (request) => {
+export const GET = async () => {
   try {
     await connect();
     const banners = await Banner.find().limit(3);

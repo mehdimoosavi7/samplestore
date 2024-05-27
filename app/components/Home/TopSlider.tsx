@@ -16,7 +16,8 @@ import { API_URL } from "../frequents/API";
 import { Console } from "console";
 
 const TopSlider = () => {
-  const fetcher = (...args: Array[string]) => fetch(...args as [string]).then((res) => res.json());
+  const fetcher = (...args: Array<string>) =>
+    fetch(...(args as [string])).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
     API_URL + "home/top-slider",
@@ -49,7 +50,7 @@ const TopSlider = () => {
         className="top-slider-swiper"
       >
         {data &&
-          data.map((banner:object) => {
+          data.map((banner: any) => {
             return (
               <SwiperSlide key={banner._id}>
                 <div className="top-slider-textBox">

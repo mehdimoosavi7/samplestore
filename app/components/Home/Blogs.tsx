@@ -14,7 +14,7 @@ const Blogs = () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  const fetcher = (...args: Array[string]) =>
+  const fetcher = (...args: Array<string>) =>
     fetch(...(args as [string])).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(API_URL + "home/blog", fetcher);
@@ -51,7 +51,7 @@ const Blogs = () => {
         </Row>
         <Row>
           {data &&
-            data.map((blog: object , index : Number) => {
+            data.map((blog: any, index : any) => {
               return (
                 <Col
                   xl={4}

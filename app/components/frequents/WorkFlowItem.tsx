@@ -1,6 +1,6 @@
 import React from "react";
 
-const WorkFlowItem = ({ counter, caption, text }) => {
+const WorkFlowItem = ({ counter, caption, text }: any) => {
   return (
     <>
       <div className="col-xl-4 col-lg-6 col-md-6">

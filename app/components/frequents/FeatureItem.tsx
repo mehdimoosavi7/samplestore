@@ -1,7 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const FeatureItem = ({icon, title, text} : String) => {
+const FeatureItem = ({icon, title, text} : any) => {
   return (
     <div className="feature-item">
       <div className="feature-icon">

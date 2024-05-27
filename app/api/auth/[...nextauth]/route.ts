@@ -4,6 +4,7 @@ import connect from "@/app/utils/db";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
+let credentials : any;
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -14,26 +15,28 @@ const handler = NextAuth({
 
         try {
           const user = await User.findOne({
-            email: credentials.email,
+            email: credentials && credentials.email,
           });
           if (user) {
-            const isPasswordCorrect = await bcrypt.compare(
-              credentials.password,
-              user.password
-            );
-            if (isPasswordCorrect) {
-              return user;
-            } else {
-              throw new Error("wrong credentials");
+            if (credentials) {
+              const isPasswordCorrect = await bcrypt.compare(
+                credentials.password,
+                user.password
+              );
+              if (isPasswordCorrect) {
+                return user;
+              } else {
+                throw new Error("wrong credentials");
+              }
             }
           } else {
             throw new Error("wrong credentials");
           }
-        } catch (err) {
+        } catch (err: any) {
           throw new Error(err);
         }
       },
-      credentials: undefined
+      credentials,
     }),
   ],
   pages: {

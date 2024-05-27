@@ -1,6 +1,6 @@
 import React from "react";
 
-const CaptionBox = ({ caption, text, textColor } : { string }) => {
+const CaptionBox = ({ caption, text, textColor }: any) => {
   return (
     <>
       <h2 style={{ color: textColor }}>{caption}</h2>

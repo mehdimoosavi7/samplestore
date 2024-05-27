@@ -1,17 +1,15 @@
-import { faEye, faHeart, faShoppingBasket, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faHeart,
+  faShoppingBasket,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductItem = ({
-  img,
-  name,
-  id,
-  price,
-  oldPrice,
-  points,
-}: { string }) => {
+const ProductItem = ({ img, name, id, price, oldPrice, points }: any) => {
   return (
     <>
       <div className="product-slide">

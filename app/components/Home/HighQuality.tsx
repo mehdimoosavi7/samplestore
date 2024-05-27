@@ -24,7 +24,7 @@ import ProductItem from "../frequents/ProductItem";
 import { API_URL } from "../frequents/API";
 
 const HighQuality = () => {
-  const fetcher = (...args: Array[string]) =>
+  const fetcher = (...args: Array<string>) =>
     fetch(...(args as [string])).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
@@ -88,7 +88,7 @@ const HighQuality = () => {
             }}
           >
             {data &&
-              data.map((product: object) => {
+              data.map((product: any) => {
                 return (
                   <SwiperSlide key={product._id}>
                     <ProductItem

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Title = ({ title }: { string }) => {
+const Title = ( title : any) => {
   return <span className="section-title">{title}</span>;
 };
 

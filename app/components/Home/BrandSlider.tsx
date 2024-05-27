@@ -12,7 +12,7 @@ import { Container, Row } from "react-bootstrap";
 import { API_URL } from "../frequents/API";
 
 const BrandSlider = () => {
-  const fetcher = (...args: Array[string]) =>
+  const fetcher = (...args: Array<string>) =>
     fetch(...(args as [string])).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(
@@ -47,7 +47,7 @@ const BrandSlider = () => {
           className="brands-swiper"
         >
           {data &&
-            data.map((brand: object) => {
+            data.map((brand: any) => {
               return (
                 <SwiperSlide key={brand._id}>
                   <Image

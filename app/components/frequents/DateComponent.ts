@@ -1,4 +1,4 @@
-const monthName = (m: Number) => {
+const monthName = (m: number) => {
   const mArray = [
     "January",
     "February",

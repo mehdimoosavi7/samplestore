@@ -10,9 +10,9 @@ const CommentItem = ({
   commentText,
   commentImage,
   commentUserName,
-}: {
-  string
-}) => {
+}: 
+  any
+) => {
   const stars = Array(5).fill(0)
   return (
     <Card className="testimonial-card">

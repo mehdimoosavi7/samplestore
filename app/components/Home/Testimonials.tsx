@@ -15,7 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Testimonials = () => {
-  const fetcher = (...args: Array[string]) =>
+  const fetcher = (...args: Array<string>) =>
     fetch(...(args as [string])).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR(API_URL + "home/comment", fetcher);
@@ -66,7 +66,7 @@ const Testimonials = () => {
             }}
           >
             {data &&
-              data.map((comment: object) => {
+              data.map((comment: any) => {
                 return (
                   <SwiperSlide key={comment._id}>
                     <CommentItem
