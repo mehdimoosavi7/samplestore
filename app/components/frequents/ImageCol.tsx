@@ -1,9 +1,9 @@
 import React from "react";
 
-const ImageCol = (src: any) => {
+const ImageCol = (props : any) => {
   return (
     <>
-      <img src={src} className="index-about-main-img" />
+      <img src={props.src} className="index-about-main-img" />
     </>
   );
 };

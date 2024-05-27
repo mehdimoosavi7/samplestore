@@ -19,7 +19,7 @@ const About = () => {
       <Container className="index-about">
         <Row>
           <Col md={12} lg={6} data-aos={"fade-right"}>
-            <ImageCol src={"/images/index/about-img-6.jpg"} />
+            <ImageCol src="/images/index/about-img-6.jpg" />
           </Col>
           <Col md={12} lg={6} data-aos={"fade-left"}>
             <div className="content-title">

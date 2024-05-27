@@ -14,7 +14,7 @@ const WhyChoose = () => {
         <Row>
           <Col md={12} lg={6} data-aos={"fade-right"}>
             <div className="imageBox">
-              <ImageCol src={"/images/index/wh-img-1.jpg"} />
+              <ImageCol src="/images/index/wh-img-1.jpg" />
               <div className="imageBox-textBox row">
                 <SellCounter text={"product sold"} subtitle={"2,150"} />
                 <SellCounter text={"partners companies"} subtitle={"220+"} />

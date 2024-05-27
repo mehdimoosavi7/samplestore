@@ -50,7 +50,7 @@ const WorkFlow = () => {
         <Row className="justify-content-center">
           {workFlowData && workFlowData.map((workflow, index) => {
             return(
-              <WorkFlowItem counter={`0${index+1}`} caption={workflow.title} text={workflow.text} />
+              <WorkFlowItem key={index} counter={`0${index+1}`} caption={workflow.title} text={workflow.text} />
             );
           })}
         </Row>

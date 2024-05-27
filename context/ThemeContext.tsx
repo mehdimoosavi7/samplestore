@@ -1,35 +1,21 @@
 "use client";
-import * as React from 'react';
-import {useState} from 'react';
-// import { createContext, useState } from "react";
-import { Theme, ThemeContextType } from '@/@types/theme';
+import { createContext, useState } from "react";
 
-export const ThemeContext = React.createContext<ThemeContextType | null>(null);
+let m : any = "light";
+export const ThemeContext = createContext(m);
 
-const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
-  const [themeMode, setThemeMode] = useState<Theme>('light');
+export const ThemeProvider = ({ children } : {children: React.ReactNode}) => {
+  const [mode, setMode] = useState("light");
+
+  const toggle = () => {
+    setMode((m) => (m === "light" ? "dark" : "light"));
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme: themeMode, changeTheme: setThemeMode}}>
-      {children}
+    <ThemeContext.Provider value={{toggle, mode}}>
+      <div className={mode}>{children}</div>
     </ThemeContext.Provider>
-  )
-}
+  );
+};
 
 export default ThemeProvider;
-
-// let m = "light";
-// export const ThemeContext = createContext(m);
-
-// export const ThemeProvider = ({ children } : {children: React.ReactNode}) => {
-//   const [mode, setMode] = useState("light");
-
-//   const toggle = () => {
-//     setMode((m) => (m === "light" ? "dark" : "light"));
-//   };
-
-//   return (
-//     <ThemeContext.Provider value={{ toggle, mode }}>
-//       <div className={mode}>{children}</div>
-//     </ThemeContext.Provider>
-//   );
-// };

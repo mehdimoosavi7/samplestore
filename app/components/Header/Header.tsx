@@ -42,7 +42,6 @@ const Header = () => {
     <header className="header">
       <nav className="container flex justify-between items-center h-100">
         <div>
-          {/* <Image src="./logo.png" width={50} height={50} alt="logo" /> */}
           <Link href="/" className="logo-name">My Store</Link>
         </div>
         <div className="space-x-5 flex justify-center items-center">
