@@ -1,0 +1,51 @@
+{
+  "homepage": "https://mehdimoosavi7.github.io/samplestore/",
+  "name": "sample-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "next test",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@flaticon/flaticon-uicons": "^3.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.15.15",
+    "aos": "^2.3.4",
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "gh-pages": "^6.1.1",
+    "gsap": "^3.12.5",
+    "mongoose": "^8.3.2",
+    "next": "14.2.3",
+    "next-auth": "^4.24.7",
+    "react": "^18",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18",
+    "react-loading-skeleton": "^3.4.0",
+    "sass": "^1.76.0",
+    "save-dev": "^0.0.1-security",
+    "swiper": "^11.1.1",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
