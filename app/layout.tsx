@@ -6,7 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { ThemeProvider } from "@/context/ThemeContext";
+import ThemeProvider from "@/context/ThemeContext";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
 import "aos/dist/aos.css";
 
