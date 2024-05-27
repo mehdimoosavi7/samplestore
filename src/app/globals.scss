@@ -270,7 +270,7 @@ p {
         margin: auto 0;
         transition: 0.4s;
         box-shadow: 0 0px 15px rgba(32, 32, 32, 0.2392156863);
-        background: white url(../public/images/sunny.png);
+        background: white url(../../public/images/sunny.png);
         background-repeat: no-repeat;
         background-position: center;
       }
@@ -279,7 +279,7 @@ p {
       background-color: #000;
       &::before {
         transform: translateX(24px);
-        background: white url(../public/images/night.png);
+        background: white url(../../public/images/night.png);
         background-repeat: no-repeat;
         background-position: center;
       }

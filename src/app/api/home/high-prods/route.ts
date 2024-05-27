@@ -1,5 +1,5 @@
-import Product from "@/app/models/product";
-import connect from "@/app/utils/db";
+import Product from "@/src/app/models/product";
+import connect from "@/src/app/utils/db";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {

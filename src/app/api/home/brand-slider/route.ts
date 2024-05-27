@@ -1,5 +1,5 @@
-import Brand from "@/app/models/Brand";
-import connect from "@/app/utils/db";
+import Brand from "@/src/app/models/Brand";
+import connect from "@/src/app/utils/db";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {

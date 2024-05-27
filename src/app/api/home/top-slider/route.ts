@@ -1,5 +1,5 @@
-import Banner from "@/app/models/Banner";
-import connect from "@/app/utils/db";
+import Banner from "@/src/app/models/Banner";
+import connect from "@/src/app/utils/db";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
