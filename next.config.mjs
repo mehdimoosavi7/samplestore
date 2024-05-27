@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    basePath: "/sample-store",
+    output: "export",
     // images: {
     //     remotePatterns: [
     //         {
@@ -8,7 +10,7 @@ const nextConfig = {
     //         }
     //     ]
     // }
-    reactStrictMode: false
+    reactStrictMode: true
 };
 
 export default nextConfig;
