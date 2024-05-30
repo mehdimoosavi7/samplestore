@@ -69,7 +69,7 @@ const Footer = () => {
                 })}
             </div>
           </Col>
-          <Col sm={12} lg={6} xl={4}>
+          <Col sm={12} lg={12} xl={4}>
             <Form>
               <Form.Label>Join to news feed</Form.Label>
               <Form.Control type="email" placeholder="name@example.com" />

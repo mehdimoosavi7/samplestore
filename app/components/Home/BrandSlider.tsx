@@ -26,7 +26,12 @@ const BrandSlider = () => {
     return (
       <Container className="py-3 text-center">
         <SkeletonTheme baseColor="#ddd" highlightColor="#fff" inline={true}>
-          <Skeleton width={200} height={200} count={4} className="mx-4"></Skeleton>
+          <Skeleton
+            width={200}
+            height={200}
+            count={4}
+            className="mx-4"
+          ></Skeleton>
         </SkeletonTheme>
       </Container>
     );
@@ -39,11 +44,24 @@ const BrandSlider = () => {
             delay: 4000,
             disableOnInteraction: false,
           }}
-          slidesPerView={4}
           spaceBetween={20}
           speed={2500}
           loop={true}
           modules={[Autoplay]}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            576: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1200: {
+              slidesPerView: 4,
+            },
+          }}
           className="brands-swiper"
         >
           {data &&

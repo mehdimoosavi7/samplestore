@@ -79,7 +79,7 @@ const HighQuality = () => {
               768:{
                 slidesPerView: 3
               },
-              992:{
+              1200:{
                 slidesPerView: 4
               },
               1400:{

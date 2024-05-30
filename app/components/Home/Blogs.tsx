@@ -54,8 +54,7 @@ const Blogs = () => {
             data.map((blog: any, index : any) => {
               return (
                 <Col
-                  xl={4}
-                  md={6}
+                  md={4}
                   sm={12}
                   key={blog._id}
                   data-aos="fade-up"

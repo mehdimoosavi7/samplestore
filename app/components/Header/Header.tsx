@@ -8,6 +8,7 @@ import {
   faCartShopping,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import { Navbar } from "react-bootstrap";
 
 const Header = () => {
   const session = useSession();
@@ -42,19 +43,22 @@ const Header = () => {
     <header className="header">
       <nav className="container flex justify-between items-center h-100">
         <div>
-          <Link href="/" className="logo-name">My Store</Link>
+          <Link href="/" className="logo-name">
+            My Store
+          </Link>
         </div>
         <div className="space-x-5 flex justify-center items-center">
           <DarkMode />
-
-          {links &&
-            links.map((link) => {
-              return (
-                <Link key={link.id} href={link.url} className="">
-                  {link.title}
-                </Link>
-              );
-            })}
+          <Navbar className="header-navbar">
+            {links &&
+              links.map((link) => {
+                return (
+                  <Link key={link.id} href={link.url} className="">
+                    {link.title}
+                  </Link>
+                );
+              })}
+          </Navbar>
 
           <Link href={"./cart"} className="shop-icon">
             <FontAwesomeIcon icon={faCartShopping} />

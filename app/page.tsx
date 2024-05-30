@@ -7,10 +7,11 @@ import Specs from "./components/Home/Specs";
 import WorkFlow from "./components/Home/WorkFlow";
 import WhyChoose from "./components/Home/WhyChoose";
 import HighQuality from "./components/Home/HighQuality";
-import "./styles/home.scss";
 import Testimonials from "./components/Home/Testimonials";
 import Blogs from "./components/Home/Blogs";
 import { useEffect } from "react";
+
+import "./styles/home.scss";
 
 export default function Home() {
 

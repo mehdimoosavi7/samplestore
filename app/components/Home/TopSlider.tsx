@@ -57,20 +57,20 @@ const TopSlider = () => {
                   <Container>
                     <h1
                       className="top-slider-textBox-title"
-                      data-animate="left"
+                      data-animate="title"
                     >
                       {banner.title}
                     </h1>
                     <h3
                       className="top-slider-textBox-subtitle"
-                      data-animate="bottom"
+                      data-animate="subtitle"
                     >
                       {banner.subtitle}
                     </h3>
                     <Link
                       className="top-slider-textBox-button feature-link"
                       href={`/products/${banner.link}`}
-                      data-animate="btn-animate"
+                      data-animate="link"
                     >
                       View More
                     </Link>
