@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FeatureItem = (props : any) => {
   return (
-    <div className={props.class ? `feature-item ${props.class}` : "feature-item"}>
+    <div className={props.class ? props.class + " feature-item" : "feature-item" }>
       <div className="feature-icon">
         <FontAwesomeIcon icon={props.icon} size={ props.size ? props.size : "2xl"} />
       </div>
