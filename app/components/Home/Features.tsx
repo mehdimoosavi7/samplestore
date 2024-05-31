@@ -27,7 +27,7 @@ const Features = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6} md={12} className="pr-0">
+          <Col lg={6} md={12} className="product-features-col">
             <div className="product-features feature-item-wrap">
               <FeatureItem
                 icon={faBell}

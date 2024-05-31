@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import useSWR from "swr";
@@ -36,20 +36,18 @@ const TopSlider = () => {
   return (
     <>
       <Swiper
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
         effect={"fade"}
         speed={2500}
         loop={true}
-        modules={[Pagination, EffectFade]}
+        modules={[Pagination, Autoplay, EffectFade]}
         className="top-slider-swiper"
-        autoHeight={false}
-        // style={{height: window.innerHeight}}
       >
         {data &&
           data.map((banner: any) => {

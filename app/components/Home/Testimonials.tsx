@@ -26,7 +26,12 @@ const Testimonials = () => {
     return (
       <Container className="py-3 text-center">
         <SkeletonTheme baseColor="#ddd" highlightColor="#fff" inline={true}>
-          <Skeleton className="mx-4" width={200} height={200} count={3}></Skeleton>
+          <Skeleton
+            className="mx-4"
+            width={200}
+            height={200}
+            count={3}
+          ></Skeleton>
         </SkeletonTheme>
       </Container>
     );
@@ -47,39 +52,41 @@ const Testimonials = () => {
           </Col>
         </Row>
         <Row>
-          <Swiper
-            spaceBetween={20}
-            className="comments-swiper"
-            speed={600}
-            pagination={{ clickable: true }}
-            modules={[Pagination]}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              576: {
-                slidesPerView: 2,
-              },
-              992: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {data &&
-              data.map((comment: any) => {
-                return (
-                  <SwiperSlide key={comment._id}>
-                    <CommentItem
-                      commentTitle={comment.comments[0].title}
-                      commentPoints={comment.comments[0].points}
-                      commentText={comment.comments[0].content}
-                      commentImage={comment.photo[0].src}
-                      commentUserName={comment.name}
-                    />
-                  </SwiperSlide>
-                );
-              })}
-          </Swiper>
+          <Col>
+            <Swiper
+              spaceBetween={20}
+              className="comments-swiper"
+              speed={600}
+              pagination={{ clickable: true }}
+              modules={[Pagination]}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                576: {
+                  slidesPerView: 2,
+                },
+                992: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
+              {data &&
+                data.map((comment: any) => {
+                  return (
+                    <SwiperSlide key={comment._id}>
+                      <CommentItem
+                        commentTitle={comment.comments[0].title}
+                        commentPoints={comment.comments[0].points}
+                        commentText={comment.comments[0].content}
+                        commentImage={comment.photo[0].src}
+                        commentUserName={comment.name}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+            </Swiper>
+          </Col>
         </Row>
       </Container>
     </section>
