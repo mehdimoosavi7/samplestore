@@ -25,12 +25,11 @@ export const metadata: Metadata = {
   title: "My Store",
   description: "designed by Mehdi Mousavipanah",
 };
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) {  
   return (
     <html lang="en" dir="ltr">
       <body className={josefin_sans.className}>

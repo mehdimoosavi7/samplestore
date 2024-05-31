@@ -14,7 +14,6 @@ import { useEffect } from "react";
 import "./styles/home.scss";
 
 export default function Home() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
