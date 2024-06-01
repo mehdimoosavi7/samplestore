@@ -136,6 +136,9 @@ h2 {
     p {
       padding-right: 45px;
       margin: 10px auto 0;
+      @media (max-width: 992px){
+        padding-right: 0;
+      }
     }
   }
   &-main-img {
