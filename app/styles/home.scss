@@ -1,5 +1,5 @@
 h2 {
-  font-size: clamp(20px,30px,38px);
+  font-size: clamp(20px, 30px, 38px);
 }
 .top-slider-swiper {
   width: 100%;
@@ -136,7 +136,7 @@ h2 {
     p {
       padding-right: 45px;
       margin: 10px auto 0;
-      @media (max-width: 992px){
+      @media (max-width: 992px) {
         padding-right: 0;
       }
     }
@@ -145,7 +145,7 @@ h2 {
     width: 100%;
     height: 630px;
     border-radius: 10px;
-    @media (max-width: 576px){
+    @media (max-width: 576px) {
       height: 400px;
     }
   }
@@ -347,6 +347,7 @@ h2 {
           font-size: 24px;
           margin: 0 0 10px;
           color: var(--light-text-color);
+          text-transform: capitalize;
         }
       }
       @media (min-width: 1200px) {
@@ -463,7 +464,7 @@ h2 {
         }
       }
     }
-    @media (max-width: 576px){
+    @media (max-width: 576px) {
       height: max-content;
     }
   }
@@ -703,6 +704,38 @@ h2 {
             width: 100%;
           }
         }
+      }
+    }
+  }
+}
+
+//ABOUT PAGE
+.about-page {
+  .index-testimonials {
+    background-color: #333;
+  }
+}
+
+//CONTACT PAGE
+.contact-page {
+  .feature-item {
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      p,
+      a {
+        color: var(--light-text-color);
+        text-align: left;
+      }
+      a {
+        margin-bottom: 10px;
+      }
+    }
+    @media (max-width: 992px) {
+      flex-direction: row !important;
+      &:nth-child(2) {
+        margin-block: 30px !important;
       }
     }
   }

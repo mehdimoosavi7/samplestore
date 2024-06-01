@@ -3,7 +3,6 @@ import PagesBanner from "../components/frequents/PagesBanner";
 import About from "../components/About/About";
 
 import "./../styles/home.scss";
-import "./../styles/about.scss";
 import Testimonials from "../components/Home/Testimonials";
 
 const page = () => {
@@ -18,7 +17,7 @@ const page = () => {
     },
   ];
   return (
-    <>
+    <div className="about-page">
       <PagesBanner
         title="about us"
         addressArray={addressArray}
@@ -26,7 +25,7 @@ const page = () => {
       />
       <About />
       <Testimonials />
-    </>
+    </div>
   );
 };
 

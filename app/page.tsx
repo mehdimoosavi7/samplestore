@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="home-page">
       <TopSlider />
       <BrandSlider />
       <About />
@@ -30,6 +30,6 @@ export default function Home() {
       <HighQuality />
       <Testimonials />
       <Blogs />
-    </>
+    </div>
   );
 }
