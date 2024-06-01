@@ -460,6 +460,9 @@ h2 {
         }
       }
     }
+    @media (max-width: 576px){
+      height: max-content;
+    }
   }
 }
 
@@ -608,6 +611,8 @@ h2 {
       background-color: #f3f4f6;
       padding: 20px;
       color: #666;
+      height: 300px;
+      position: relative;
       .blog-card-header {
         margin-bottom: 14px;
         display: flex;
@@ -659,7 +664,8 @@ h2 {
         font-weight: bold;
         padding-bottom: 10px;
         width: max-content;
-        position: relative;
+        position: absolute;
+        bottom: 10px;
         &::after {
           content: "";
           position: absolute;

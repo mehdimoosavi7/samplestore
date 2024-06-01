@@ -34,9 +34,6 @@ body {
 
 section {
   margin-block: 70px;
-  @media (max-width: 768px) {
-    margin-block: 30px;
-  }
 }
 
 input {
@@ -160,6 +157,7 @@ p {
       }
     }
     @media (max-width: 576px) {
+      top: 42%;
       right: 40px;
     }
   }
@@ -360,6 +358,12 @@ p {
         }
       }
     }
+    @media (max-width: 992px) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+      padding-block: 30px;
+    }
   }
   @media (min-width: 1200px) {
     h2:hover {
@@ -409,6 +413,9 @@ p {
           }
         }
       }
+    }
+    @media (max-width: 992px){
+      align-items: center;
     }
   }
   .copyRight {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Col, Container, Row } from "react-bootstrap";
 import useSWR from "swr";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -38,7 +38,12 @@ const HighQuality = () => {
     return (
       <Container className="py-3 text-center">
         <SkeletonTheme baseColor="#ddd" highlightColor="#fff" inline={true}>
-          <Skeleton className="mx-4" width={200} height={200} count={4}></Skeleton>
+          <Skeleton
+            className="mx-4"
+            width={200}
+            height={200}
+            count={4}
+          ></Skeleton>
         </SkeletonTheme>
       </Container>
     );
@@ -58,57 +63,63 @@ const HighQuality = () => {
           </Col>
         </Row>
         <Row>
-          <Swiper
-            navigation={{
-              nextEl: ".product-swiper-next",
-              prevEl: ".product-swiper-prev",
-              disabledClass: "swiper-button-disabled",
-            }}
-            modules={[Navigation]}
-            slidesPerView={4}
-            spaceBetween={25}
-            className="products-swiper"
-            speed={600}
-            breakpoints={{
-              0:{
-                slidesPerView: 1
-              },
-              576:{
-                slidesPerView: 2
-              },
-              768:{
-                slidesPerView: 3
-              },
-              1200:{
-                slidesPerView: 4
-              },
-              1400:{
-                slidesPerView: 5
-              },
-            }}
-          >
-            {data &&
-              data.map((product: any) => {
-                return (
-                  <SwiperSlide key={product._id}>
-                    <ProductItem
-                      img={`/images/${product.pictures[0].src}`}
-                      name={product.name}
-                      id={product._id}
-                      price={product.price}
-                      oldPrice={product.oldPrice}
-                      points={product.points}
-                    />
-                  </SwiperSlide>
-                );
-              })}
-          </Swiper>
+          <Col>
+            <Swiper
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              navigation={{
+                nextEl: ".product-swiper-next",
+                prevEl: ".product-swiper-prev",
+                disabledClass: "swiper-button-disabled",
+              }}
+              modules={[Navigation, Autoplay]}
+              spaceBetween={25}
+              className="products-swiper"
+              speed={1000}
+              loop={true}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                576: {
+                  slidesPerView: 2,
+                },
+                992: {
+                  slidesPerView: 3,
+                },
+                1200: {
+                  slidesPerView: 4,
+                },
+                1400: {
+                  slidesPerView: 5,
+                },
+              }}
+            >
+              {data &&
+                data.map((product: any) => {
+                  return (
+                    <SwiperSlide key={product._id}>
+                      <ProductItem
+                        img={`/images/${product.pictures[0].src}`}
+                        name={product.name}
+                        id={product._id}
+                        price={product.price}
+                        oldPrice={product.oldPrice}
+                        points={product.points}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+            </Swiper>
             <button className="swiper-button-next product-swiper-next">
               <FontAwesomeIcon icon={faArrowRightLong} size="sm" />
             </button>
             <button className="swiper-button-prev product-swiper-prev">
               <FontAwesomeIcon icon={faArrowLeftLong} size="sm" />
             </button>
+          </Col>
         </Row>
       </Container>
     </section>
