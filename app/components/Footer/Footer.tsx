@@ -73,9 +73,9 @@ const Footer = () => {
             <Form>
               <Form.Label>Join to news feed</Form.Label>
               <Form.Control type="email" placeholder="name@example.com" />
-              <Button type="button" className="subs-btn">
+              <button type="button" className="subs-btn feature-link">
                 Join us!
-              </Button>
+              </button>
             </Form>
             <div className="addressBox">
               <p>No 24, Park st, London</p>
