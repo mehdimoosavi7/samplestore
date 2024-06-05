@@ -2,6 +2,7 @@ import { Josefin_Sans } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import "react-loading-skeleton/dist/skeleton.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 import "./globals.scss";
 import Header from "./components/Header/Header";

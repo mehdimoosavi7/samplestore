@@ -1,22 +1,84 @@
 "use client";
-import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import React, { useRef, useState, useEffect } from "react";
+import { Col, Container, Form, Row, Spinner } from "react-bootstrap";
+import axios from "axios";
+import { API_URL } from "../frequents/API";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
-  const [validated, setValidated] = useState(false);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (event: any) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropogation();
+  const name: any = useRef();
+  const email: any = useRef();
+  const phone: any = useRef();
+  const subject: any = useRef();
+  const message: any = useRef();
+
+  const [errors, setErrors] = useState({
+    nameErr: "",
+    emailErr: "",
+    phoneErr: "",
+    messageErr: "",
+  });
+
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const validateForm = async () => {
+    let errors: any = {};
+    if (!name.current.value) {
+      errors.nameErr = "Name is required.";
+    } else if (!email.current.value) {
+      errors.emailErr = "Email is required.";
+    } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.current.value)) {
+      errors.emailErr = "Email is invalid.";
+    } else if (!phone.current.value) {
+      errors.phoneErr = "Phone number is required.";
+    } else if (phone.current.value.length < 8) {
+      errors.phoneErr = "Phone number must be at least 8 characters.";
+    } else if (!message.current.value) {
+      errors.messageErr = "Message is required.";
     }
-    setValidated(true);
+    setErrors(errors);
+    setIsFormValid(Object.keys(errors).length === 0);
+  };
+
+  const handleForm = async (event: any) => {
+    const sendData = async () => {
+      try {
+        setLoading(true);
+        const response: any = await axios.post(API_URL + "contactus", {
+          name: name.current.value,
+          email: email.current.value,
+          phone: phone.current.value,
+          subject: subject.current.value,
+          message: message.current.value,
+        });
+        setData(response.data);
+        toast.success("Message sent successfully.");
+        console.log(response.data);
+      } catch (err: any) {
+        setError(err);
+        toast.error("Message not sent! please try later.");
+      } finally {
+        setLoading(false);
+        name.current.value = "";
+        email.current.value = "";
+        phone.current.value = "";
+        subject.current.value = "";
+        message.current.value = "";
+      }
+    };
+    isFormValid ? sendData() : validateForm();
   };
 
   return (
     <section className="contact-form">
       <Container>
+        {/* {error && error.response.status && <p>اطلاعات وارد شده صحیح نمیباشد</p>} */}
+        {loading && <Spinner />}
         <Row className="mb-5">
           <Col xl={4} className="map-col">
             <iframe
@@ -25,37 +87,65 @@ const ContactForm = () => {
             ></iframe>
           </Col>
           <Col xl={8}>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-              <Row>
-                <Form.Group className="mb-4" as={Col} lg="6">
+            <Form action="">
+              <Row className="gap-y-5">
+                <Form.Group as={Col} lg="6">
                   <Form.Control
-                    id="nameInput"
                     placeholder="Your Full Name*"
                     required
                     type="text"
+                    ref={name}
+                  />
+                  {errors.nameErr && (
+                    <span className="error">{errors.nameErr}</span>
+                  )}
+                </Form.Group>
+                <Form.Group as={Col} lg="6">
+                  <Form.Control
+                    placeholder="Email Address*"
+                    type="email"
+                    required
+                    ref={email}
+                  />
+                  {errors.emailErr && (
+                    <span className="error">{errors.emailErr}</span>
+                  )}
+                </Form.Group>
+                <Form.Group as={Col} lg="6">
+                  <Form.Control
+                    placeholder="Phone Number"
+                    type="number"
+                    maxLength={11}
+                    ref={phone}
+                  />
+                  {errors.phoneErr && (
+                    <span className="error">{errors.phoneErr}</span>
+                  )}
+                </Form.Group>
+                <Form.Group as={Col} lg="6">
+                  <Form.Control
+                    placeholder="Subject"
+                    type="text"
+                    ref={subject}
                   />
                 </Form.Group>
-                <Form.Group className="mb-4" as={Col} lg="6">
-                  <Form.Control id="emailInput" placeholder="Email Address*" type="email" />
-                </Form.Group>
-                <Form.Group className="mb-4" as={Col} lg="6">
-                  <Form.Control id="phoneInput" placeholder="Phone Number" type="number" />
-                </Form.Group>
-                <Form.Group className="mb-4" as={Col} lg="6">
-                  <Form.Control id="subjectInput" placeholder="Subject" type="text"/>
-                </Form.Group>
-                <Form.Group className="mb-4">
+                <Form.Group>
                   <Form.Control
                     id="messageInput"
                     placeholder="Your Messages.."
                     as="textarea"
                     rows={5}
+                    ref={message}
                   />
+                  {errors.messageErr && (
+                    <span className="error">{errors.messageErr}</span>
+                  )}
                 </Form.Group>
                 <Form.Group>
                   <button
-                    type="submit"
+                    type="button"
                     className="contact-form-btn feature-link"
+                    onClick={handleForm}
                   >
                     Submit
                   </button>

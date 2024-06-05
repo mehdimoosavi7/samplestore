@@ -32,6 +32,10 @@ body {
   }
 }
 
+.error {
+  color: #eb1f1f;
+}
+
 section {
   padding-block: 70px;
 }
@@ -713,7 +717,7 @@ p {
       }
     }
   }
-  .form-control{
+  .form-control {
     background-color: #222;
     color: var(--dark-text-color);
   }
