@@ -9,7 +9,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductItem = ({ img, name, id, price, oldPrice, points }: any) => {
+interface ProductItemProps {
+  img: string;
+  name: string;
+  id: number;
+  price: number;
+  oldPrice?: number;
+  points?: number;
+}
+
+const ProductItem: React.FC<ProductItemProps> = ({
+  img,
+  name,
+  id,
+  price,
+  oldPrice,
+  points,
+}) => {
   return (
     <>
       <div className="product-slide">

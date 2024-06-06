@@ -1,6 +1,9 @@
 import React from "react";
-
-const SellCounter = ({text, subtitle} : any) => {
+interface SellCounterProps {
+  text: string;
+  subtitle: string;
+}
+const SellCounter: React.FC<SellCounterProps> = ({ text, subtitle }) => {
   return (
     <>
       <div className="sell-counter col-6">

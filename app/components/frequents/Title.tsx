@@ -1,7 +1,11 @@
 import React from "react";
 
-const Title = ( props : any) => {
-  return <span className="section-title">{props.title}</span>;
+interface TitleProps {
+  title: string;
+}
+
+const Title: React.FC<TitleProps> = ({ title }) => {
+  return <span className="section-title">{title}</span>;
 };
 
 export default Title;

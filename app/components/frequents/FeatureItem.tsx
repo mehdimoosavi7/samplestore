@@ -1,23 +1,35 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
 
-const FeatureItem = (props: any) => {
+interface FeatureItemProps {
+  classname?: string;
+  icon: IconProp;
+  size?: SizeProp;
+  title: string;
+  text?: string;
+  link1?: string;
+  link2?: string;
+  linkType?: string;
+}
+
+const FeatureItem:React.FC<FeatureItemProps> = ({classname,icon,size,title,text,link1,link2,linkType}) => {
   return (
     <div
-      className={props.class ? props.class + " feature-item" : "feature-item"}
+      className={classname ? classname + " feature-item" : "feature-item"}
     >
       <div className="feature-icon">
         <FontAwesomeIcon
-          icon={props.icon}
-          size={props.size ? props.size : "2xl"}
+          icon={icon}
+          size={size ? size : "2xl"}
         />
       </div>
       <div className="feature-text">
-        <h3>{props.title}</h3>
-        {props.text && <p>{props.text}</p>}
-        {props.link1 && <Link href={props.linkType + props.link1}>{props.link1}</Link>}
-        {props.link2 && <Link href={props.linkType + props.link2}>{props.link2}</Link>}
+        <h3>{title}</h3>
+        {text && <p>{text}</p>}
+        {link1 && <Link href={linkType + link1}>{link1}</Link>}
+        {link2 && <Link href={linkType + link2}>{link2}</Link>}
       </div>
     </div>
   );

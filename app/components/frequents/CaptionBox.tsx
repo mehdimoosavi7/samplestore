@@ -1,6 +1,15 @@
 import React from "react";
+interface CaptionBoxProps {
+  caption: string;
+  text: string;
+  textColor?: string;
+}
 
-const CaptionBox = ({ caption, text, textColor }: any) => {
+const CaptionBox: React.FC<CaptionBoxProps> = ({
+  caption,
+  text,
+  textColor,
+}) => {
   return (
     <>
       <h2 style={{ color: textColor }}>{caption}</h2>

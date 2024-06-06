@@ -45,7 +45,7 @@ const ContactDetails = () => {
             return (
               <FeatureItem
                 key={index}
-                class="col-12 col-lg-4"
+                classname="col-12 col-lg-4"
                 icon={detail.icon}
                 title={detail.title}
                 text={detail.text}

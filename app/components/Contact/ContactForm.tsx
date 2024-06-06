@@ -11,6 +11,8 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   const name: any = useRef();
   const email: any = useRef();
   const phone: any = useRef();
@@ -32,7 +34,7 @@ const ContactForm = () => {
       errors.nameErr = "Name is required.";
     } else if (!email.current.value) {
       errors.emailErr = "Email is required.";
-    } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.current.value)) {
+    } else if (!emailRegex.test(email.current.value)) {
       errors.emailErr = "Email is invalid.";
     } else if (!phone.current.value) {
       errors.phoneErr = "Phone number is required.";

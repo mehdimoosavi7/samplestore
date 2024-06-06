@@ -3,27 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React from "react";
 import { Card } from "react-bootstrap";
+interface CommentItemProps {
+  commentTitle: string;
+  commentPoints: number;
+  commentText: string;
+  commentImage: string;
+  commentUserName: string;
+}
 
-const CommentItem = ({
+const CommentItem: React.FC<CommentItemProps> = ({
   commentTitle,
   commentPoints,
   commentText,
   commentImage,
   commentUserName,
-}: 
-  any
-) => {
-  const stars = Array(5).fill(0)
+}) => {
+  const stars = Array(5).fill(0);
   return (
     <Card className="testimonial-card">
       <Card.Body>
         <ul className="card-points">
           {stars.map((_, index) => {
             return (
-              <li key={index} className={(commentPoints) > index ? "filled" : ""} >
+              <li key={index} className={commentPoints > index ? "filled" : ""}>
                 <FontAwesomeIcon icon={faStar} />
               </li>
-            )
+            );
           })}
         </ul>
         <Card.Title as="h3">{commentTitle}</Card.Title>

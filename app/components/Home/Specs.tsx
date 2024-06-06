@@ -42,7 +42,7 @@ const specs = () => {
               {features.map((feature, index) => {
                 return (
                   <FeatureItem
-                    class="col-12 col-lg-4"
+                    classname="col-12 col-lg-4"
                     data-aos="fade-up"
                     data-aos-duration="1200"
                     data-aos-delay={200 * index}

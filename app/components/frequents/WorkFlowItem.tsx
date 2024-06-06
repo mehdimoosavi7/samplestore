@@ -1,6 +1,16 @@
 import React from "react";
 
-const WorkFlowItem = ({ counter, caption, text }: any) => {
+interface WorkFlowItemProps {
+  counter: number | string;
+  caption: string;
+  text: string;
+}
+
+const WorkFlowItem: React.FC<WorkFlowItemProps> = ({
+  counter,
+  caption,
+  text,
+}) => {
   return (
     <>
       <div className="col-xl-4 col-lg-6 col-md-6">

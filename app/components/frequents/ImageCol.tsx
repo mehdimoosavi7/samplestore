@@ -1,9 +1,13 @@
 import React from "react";
 
-const ImageCol = (props : any) => {
+interface ImageColProps {
+  src: string;
+}
+
+const ImageCol: React.FC<ImageColProps> = ({ src }) => {
   return (
     <>
-      <img src={props.src} className="index-about-main-img" />
+      <img src={src} className="index-about-main-img" />
     </>
   );
 };

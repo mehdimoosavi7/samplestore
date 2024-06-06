@@ -8,9 +8,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 import { Card } from "react-bootstrap";
-import DateComponent from "./DateComponent"; 
+import DateComponent from "./DateComponent";
 
-const CommentItem = ({
+interface CommentItemProps {
+  blogTitle: string;
+  blogText: string;
+  blogId: number;
+  blogImage: string;
+  blogAuthor: string;
+  blogCommentsCount: number;
+  blogDate: Date;
+}
+
+const CommentItem: React.FC<CommentItemProps> = ({
   blogTitle,
   blogText,
   blogId,
@@ -18,10 +28,7 @@ const CommentItem = ({
   blogAuthor,
   blogCommentsCount,
   blogDate,
-}: 
-  any
-) => {
-  const writeDate = DateComponent(blogDate);
+}) => {
   return (
     <Card className="blog-card">
       <div className="blog-card-image">
@@ -39,7 +46,7 @@ const CommentItem = ({
           </span>
           <span className="blog-card-header-item">
             <FontAwesomeIcon icon={faCalendar} />
-            {writeDate}
+            <DateComponent d={blogDate} />
           </span>
         </div>
         <Card.Title as="h3">{blogTitle}</Card.Title>

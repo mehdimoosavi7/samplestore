@@ -13,10 +13,12 @@ const monthName = (m: number) => {
     "November",
     "December",
   ];
-  return mArray[m-1];
+  return mArray[m - 1];
+};
+interface DateComponentProps {
+  d: Date;
 }
-
-const DateComponent = (d: Date) => {
+const DateComponent: React.FC<DateComponentProps> = ({ d }) => {
   const myDate = new Date(d);
   const month = myDate.getMonth() + 1;
   const year = myDate.getFullYear();
@@ -26,5 +28,3 @@ const DateComponent = (d: Date) => {
 };
 
 export default DateComponent;
-
-
