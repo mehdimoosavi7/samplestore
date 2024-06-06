@@ -1,7 +1,7 @@
 import React from "react";
 interface CaptionBoxProps {
   caption: string;
-  text: string;
+  text?: string;
   textColor?: string;
 }
 

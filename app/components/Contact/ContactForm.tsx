@@ -3,8 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Form, Row, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { API_URL } from "../frequents/API";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const ContactForm = () => {
   const [data, setData] = useState(null);
@@ -13,11 +12,11 @@ const ContactForm = () => {
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const name: any = useRef();
-  const email: any = useRef();
-  const phone: any = useRef();
-  const subject: any = useRef();
-  const message: any = useRef();
+  const name = useRef<HTMLInputElement>(null);
+  const email = useRef<HTMLInputElement>(null);
+  const phone = useRef<HTMLInputElement>(null);
+  const subject = useRef<HTMLInputElement>(null);
+  const message = useRef<HTMLTextAreaElement>(null);
 
   const [errors, setErrors] = useState({
     nameErr: "",
@@ -30,17 +29,17 @@ const ContactForm = () => {
 
   const validateForm = async () => {
     let errors: any = {};
-    if (!name.current.value) {
+    if (name.current && !name.current.value) {
       errors.nameErr = "Name is required.";
-    } else if (!email.current.value) {
+    } else if (email.current && !email.current.value) {
       errors.emailErr = "Email is required.";
-    } else if (!emailRegex.test(email.current.value)) {
+    } else if (email.current && !emailRegex.test(email.current.value)) {
       errors.emailErr = "Email is invalid.";
-    } else if (!phone.current.value) {
+    } else if (phone.current && !phone.current.value) {
       errors.phoneErr = "Phone number is required.";
-    } else if (phone.current.value.length < 8) {
+    } else if (phone.current && phone.current.value.length < 8) {
       errors.phoneErr = "Phone number must be at least 8 characters.";
-    } else if (!message.current.value) {
+    } else if (message.current && !message.current.value) {
       errors.messageErr = "Message is required.";
     }
     setErrors(errors);
@@ -52,11 +51,11 @@ const ContactForm = () => {
       try {
         setLoading(true);
         const response: any = await axios.post(API_URL + "contactus", {
-          name: name.current.value,
-          email: email.current.value,
-          phone: phone.current.value,
-          subject: subject.current.value,
-          message: message.current.value,
+          name: name.current && name.current.value,
+          email: email.current && email.current.value,
+          phone: phone.current && phone.current.value,
+          subject: subject.current && subject.current.value,
+          message: message.current && message.current.value,
         });
         setData(response.data);
         toast.success("Message sent successfully.");
@@ -66,11 +65,11 @@ const ContactForm = () => {
         toast.error("Message not sent! please try later.");
       } finally {
         setLoading(false);
-        name.current.value = "";
-        email.current.value = "";
-        phone.current.value = "";
-        subject.current.value = "";
-        message.current.value = "";
+        name.current && (name.current.value = "");
+        email.current && (email.current.value = "");
+        phone.current && (phone.current.value = "");
+        subject.current && (subject.current.value = "");
+        message.current && (message.current.value = "");
       }
     };
     isFormValid ? sendData() : validateForm();
@@ -79,7 +78,7 @@ const ContactForm = () => {
   return (
     <section className="contact-form">
       <Container>
-        {/* {error && error.response.status && <p>اطلاعات وارد شده صحیح نمیباشد</p>} */}
+        <ToastContainer />
         {loading && <Spinner />}
         <Row className="mb-5">
           <Col xl={4} className="map-col">

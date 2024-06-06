@@ -14,8 +14,13 @@ import "aos/dist/aos.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { toast } from "react-toastify";
 
 library.add(fas, fab);
+
+toast.configure({
+  position: toast.POSITION.CENTER,
+})
 
 const josefin_sans = Josefin_Sans({
   weight: "400",
