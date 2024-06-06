@@ -728,6 +728,13 @@ p {
   ::-ms-input-place-holder {
     color: var(--dark-text-color) !important;
   }
+  .Toastify__toast {
+    color: #fff;
+    background-color: #444;
+  }
+  .Toastify__close-button{
+    color: #fff;
+  }
 }
 
 // Responsive

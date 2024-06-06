@@ -10,10 +10,10 @@ module.exports = {
     container: {
       center: true,
     },
-    colors:{
-      
-    },
     extend: {
+      colors: {
+    
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

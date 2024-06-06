@@ -78,8 +78,10 @@ const ContactForm = () => {
   return (
     <section className="contact-form">
       <Container>
-        <ToastContainer />
-        {loading && <Spinner />}
+        <ToastContainer position="top-center" />
+        <Row>
+          <Col>{loading && <Spinner />}</Col>
+        </Row>
         <Row className="mb-5">
           <Col xl={4} className="map-col">
             <iframe

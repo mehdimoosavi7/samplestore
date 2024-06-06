@@ -2,14 +2,15 @@ import { Josefin_Sans } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
 import "react-loading-skeleton/dist/skeleton.css";
-import 'react-toastify/dist/ReactToastify.css';
 
 import "./globals.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ThemeProvider from "@/context/ThemeContext";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
+
 import "aos/dist/aos.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -17,10 +18,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { toast } from "react-toastify";
 
 library.add(fas, fab);
-
-toast.configure({
-  position: toast.POSITION.CENTER,
-})
 
 const josefin_sans = Josefin_Sans({
   weight: "400",
