@@ -4,7 +4,7 @@ import { Col, Container, Form, Row, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { API_URL } from "../frequents/API";
 import { ToastContainer, toast } from "react-toastify";
-import PrevWords from "../frequents/prevWords";
+import PrevWords from "../frequents/PrevWords";
 
 const ContactForm = () => {
   const [data, setData] = useState(null);
