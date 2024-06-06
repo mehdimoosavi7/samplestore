@@ -62,7 +62,14 @@ p {
     font-size: 0.8rem !important;
   }
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 .product-slide {
   display: flex;
   justify-content: center;
@@ -732,7 +739,7 @@ p {
     color: #fff;
     background-color: #444;
   }
-  .Toastify__close-button{
+  .Toastify__close-button {
     color: #fff;
   }
 }

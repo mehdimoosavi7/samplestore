@@ -4,6 +4,7 @@ import { Col, Container, Form, Row, Spinner } from "react-bootstrap";
 import axios from "axios";
 import { API_URL } from "../frequents/API";
 import { ToastContainer, toast } from "react-toastify";
+import PrevWords from "../frequents/prevWords";
 
 const ContactForm = () => {
   const [data, setData] = useState(null);
@@ -117,9 +118,10 @@ const ContactForm = () => {
                 <Form.Group as={Col} lg="6">
                   <Form.Control
                     placeholder="Phone Number"
-                    type="number"
+                    type="text"
                     maxLength={11}
                     ref={phone}
+                    onKeyDown={PrevWords}
                   />
                   {errors.phoneErr && (
                     <span className="error">{errors.phoneErr}</span>
