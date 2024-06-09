@@ -60,7 +60,6 @@ const ContactForm = () => {
         });
         setData(response.data);
         toast.success("Message sent successfully.");
-        console.log(response.data);
       } catch (err: any) {
         setError(err);
         toast.error("Message not sent! please try later.");
