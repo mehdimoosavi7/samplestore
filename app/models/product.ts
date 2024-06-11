@@ -1,5 +1,5 @@
 const { Schema, default: mongoose } = require("mongoose");
-
+ 
 const productSchema = new Schema({
   price:{
     type: Number,
