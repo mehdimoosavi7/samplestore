@@ -1,10 +1,4 @@
-$foreground-rgb: 0, 0, 0;
-$background-start-rgb: 214, 219, 220;
-$background-end-rgb: 255, 255, 255;
-$dark-yellow: rgb(255, 193, 7);
-$light-yellow: rgb(146, 120, 16);
-$light-text-color: #444;
-$dark-text-color: #bdbdbd;
+@import "../globals.scss";
 
 h2 {
   font-size: clamp(20px, 30px, 38px);
