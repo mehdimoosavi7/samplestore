@@ -1,3 +1,11 @@
+$foreground-rgb: 0, 0, 0;
+$background-start-rgb: 214, 219, 220;
+$background-end-rgb: 255, 255, 255;
+$dark-yellow: rgb(255, 193, 7);
+$light-yellow: rgb(146, 120, 16);
+$light-text-color: #444;
+$dark-text-color: #bdbdbd;
+
 h2 {
   font-size: clamp(20px, 30px, 38px);
 }
@@ -165,7 +173,7 @@ h2 {
         align-items: center;
         justify-content: center;
         svg {
-          color: var(--light-yellow);
+          color: $light-yellow;
         }
       }
       .feature-text {
@@ -175,7 +183,7 @@ h2 {
           font-size: clamp(14px, 18px, 24px);
           margin: 0 0 10px;
           transition: 0.4s;
-          color: var(--light-text-color);
+          color: $light-text-color;
         }
       }
     }
@@ -323,7 +331,7 @@ h2 {
         overflow: hidden;
         text-align: center;
         position: relative;
-        color: var(--light-yellow);
+        color: $light-yellow;
         &::after {
           position: absolute;
           bottom: 0;
@@ -331,7 +339,7 @@ h2 {
           content: "";
           width: 0;
           height: 100%;
-          background-color: var(--dark-yellow);
+          background-color: $dark-yellow;
           transition: 0.4s;
           visibility: hidden;
           opacity: 0;
@@ -346,7 +354,7 @@ h2 {
           transition: 0.4s;
           font-size: 24px;
           margin: 0 0 10px;
-          color: var(--light-text-color);
+          color: $light-text-color;
           text-transform: capitalize;
         }
       }
@@ -363,7 +371,7 @@ h2 {
           }
           .feature-text {
             h3 {
-              color: var(--light-yellow);
+              color: $light-yellow;
             }
           }
         }
@@ -636,7 +644,7 @@ h2 {
             bottom: 0;
           }
           svg {
-            color: var(--light-yellow);
+            color: $light-yellow;
             margin-top: 2px;
           }
         }
@@ -648,7 +656,7 @@ h2 {
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-transform: capitalize;
-        color: var(--light-text-color);
+        color: $light-text-color;
         margin-block: 20px;
       }
       .card-text {
@@ -675,7 +683,7 @@ h2 {
           position: absolute;
           left: 0;
           bottom: 5px;
-          background-color: var(--light-yellow);
+          background-color: $light-yellow;
           height: 2px;
           width: 0;
           transition: all 0.5s ease-in-out;
@@ -693,7 +701,7 @@ h2 {
         }
         .card-title,
         .card-link {
-          color: var(--light-yellow);
+          color: $light-yellow;
         }
         .card-link {
           svg {
@@ -720,7 +728,7 @@ h2 {
     h2,
     h3,
     p {
-      color: var(--dark-text-color) !important;
+      color: $dark-text-color !important;
     }
     .imageBox-textBox {
       p {
@@ -732,7 +740,7 @@ h2 {
     &-header {
       h2,
       p {
-        color: var(--dark-text-color);
+        color: $dark-text-color;
       }
     }
   }
@@ -743,13 +751,13 @@ h2 {
           h3,
           p,
           a {
-            color: var(--dark-text-color) !important;
+            color: $dark-text-color !important;
           }
         }
         .feature-icon {
-          color: var(--dark-yellow);
+          color: $dark-yellow;
           &::after {
-            background-color: var(--dark-yellow);
+            background-color: $dark-yellow;
           }
         }
       }
@@ -778,7 +786,7 @@ h2 {
   .index-high {
     h2,
     p {
-      color: var(--dark-text-color);
+      color: $dark-text-color;
     }
   }
   .index-testimonials {
@@ -794,7 +802,7 @@ h2 {
       .section-title,
       h2,
       p {
-        color: var(--dark-text-color);
+        color: $dark-text-color;
       }
     }
     .card-body {
@@ -805,14 +813,14 @@ h2 {
         color: #fff !important;
       }
       .card-link {
-        color: var(--dark-yellow);
+        color: $dark-yellow;
       }
     }
   }
   .contact-page {
     .contact-details {
       h2 {
-        color: var(--dark-text-color);
+        color: $dark-text-color;
       }
     }
   }

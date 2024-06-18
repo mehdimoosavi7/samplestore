@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --dark-yellow: rgb(255, 193, 7);
-  --light-yellow: rgb(146, 120, 16);
-  --light-text-color: #444;
-  --dark-text-color: #bdbdbd;
-}
+$foreground-rgb: 0, 0, 0;
+$background-start-rgb: 214, 219, 220;
+$background-end-rgb: 255, 255, 255;
+$dark-yellow: rgb(255, 193, 7);
+$light-yellow: rgb(146, 120, 16);
+$light-text-color: #444;
+$dark-text-color: #bdbdbd;
 
 html,
 body {
@@ -96,7 +94,7 @@ input[type="number"] {
       position: absolute;
       top: 20px;
       left: 10%;
-      background-color: var(--light-yellow);
+      background-color: $light-yellow;
       color: #fff;
       display: flex;
       align-items: center;
@@ -117,7 +115,7 @@ input[type="number"] {
     white-space: nowrap;
   }
   .product-price {
-    color: var(--light-yellow);
+    color: $light-yellow;
     font-size: 18px;
     .discount {
       font-size: 18px;
@@ -158,14 +156,14 @@ input[type="number"] {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        border: 1px solid var(--light-yellow);
+        border: 1px solid $light-yellow;
         box-shadow: none;
         width: 38px;
         height: 38px;
         border-radius: 50%;
         background-color: #fff;
         transition: 0.6s;
-        color: var(--light-yellow);
+        color: $light-yellow;
       }
     }
     @media (max-width: 576px) {
@@ -179,7 +177,7 @@ input[type="number"] {
         transform: scale(1.2);
       }
       .product-name {
-        color: var(--light-yellow);
+        color: $light-yellow;
       }
       .product-button {
         visibility: visible;
@@ -187,7 +185,7 @@ input[type="number"] {
         transform: translateX(0);
         &:hover {
           button {
-            background-color: var(--light-yellow);
+            background-color: $light-yellow;
             color: #fff;
           }
         }
@@ -202,7 +200,7 @@ input[type="number"] {
   height: 45px !important;
   border-radius: 50%;
   background-color: #fff;
-  color: var(--light-yellow) !important;
+  color: $light-yellow !important;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   padding: 8px;
@@ -221,7 +219,7 @@ input[type="number"] {
     width: 0;
     height: 100%;
     border-radius: 50%;
-    background-color: var(--light-yellow);
+    background-color: $light-yellow;
     transition: all 0.4s ease-in-out;
     z-index: -1;
   }
@@ -249,9 +247,9 @@ input[type="number"] {
   height: 70px;
   @media (min-width: 1200px) {
     a:hover {
-      color: var(--light-yellow);
+      color: $light-yellow;
       svg {
-        color: var(--light-yellow);
+        color: $light-yellow;
       }
     }
   }
@@ -343,7 +341,7 @@ input[type="number"] {
 
 .footer {
   background-color: rgb(231, 232, 234);
-  color: var(--light-text-color);
+  color: $light-text-color;
   padding-top: 2rem;
   .nav {
     display: flex;
@@ -362,10 +360,10 @@ input[type="number"] {
       }
       @media (min-width: 1200px) {
         &:hover {
-          color: var(--light-yellow);
+          color: $light-yellow;
           svg {
             transform: rotate(360deg);
-            color: var(--light-yellow);
+            color: $light-yellow;
           }
         }
       }
@@ -379,7 +377,7 @@ input[type="number"] {
   }
   @media (min-width: 1200px) {
     h2:hover {
-      color: var(--light-yellow);
+      color: $light-yellow;
     }
   }
   form {
@@ -393,11 +391,11 @@ input[type="number"] {
     button {
       position: absolute;
       right: 0;
-      background-color: var(--light-yellow);
-      border-color: var(--light-yellow);
+      background-color: $light-yellow;
+      border-color: $light-yellow;
       @media (min-width: 1200px) {
         &:hover {
-          border-color: var(--dark-yellow);
+          border-color: $dark-yellow;
         }
       }
     }
@@ -418,7 +416,7 @@ input[type="number"] {
         transition: transform 0.2s ease-in-out;
         @media (min-width: 1200px) {
           &:hover {
-            color: var(--light-yellow);
+            color: $light-yellow;
             transform: scale(1.3);
           }
         }
@@ -435,14 +433,14 @@ input[type="number"] {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: var(--light-text-color);
+      color: $light-text-color;
       font-size: 0.8rem;
     }
   }
 }
 
 .section-title {
-  color: var(--light-yellow);
+  color: $light-yellow;
   display: inline-block;
   font-weight: 500;
   letter-spacing: 4px;
@@ -466,7 +464,7 @@ input[type="number"] {
 
 .feature-link {
   position: relative;
-  background-color: var(--light-yellow);
+  background-color: $light-yellow;
   padding: 8px 15px;
   display: flex;
   align-items: center;
@@ -479,7 +477,7 @@ input[type="number"] {
   font-size: 1rem;
   &::before,
   &::after {
-    background-color: var(--dark-yellow);
+    background-color: $dark-yellow;
     position: absolute;
     content: "";
     width: 50%;
@@ -526,10 +524,10 @@ input[type="number"] {
         align-items: center;
         gap: 10px;
         padding-top: 10px;
-        border-bottom: 1px solid var(--light-yellow);
+        border-bottom: 1px solid $light-yellow;
         svg {
           margin-top: -5px;
-          color: var(--light-yellow);
+          color: $light-yellow;
         }
       }
     }
@@ -571,7 +569,7 @@ input[type="number"] {
       &-link {
         position: relative;
         &-text {
-          color: var(--light-yellow);
+          color: $light-yellow;
           text-transform: capitalize;
           font-size: clamp(16px, 14px, 12px);
         }
@@ -580,7 +578,7 @@ input[type="number"] {
             color: #fff;
             font-weight: bold;
             &:hover {
-              color: var(--light-yellow);
+              color: $light-yellow;
             }
           }
           &::after {
@@ -614,7 +612,7 @@ input[type="number"] {
       align-items: flex-start;
       p,
       a {
-        color: var(--light-text-color);
+        color: $light-text-color;
         text-align: left;
       }
       a {
@@ -682,7 +680,7 @@ input[type="number"] {
     &-title {
       font-size: clamp(24px, 20px, 16px);
       padding-bottom: 10px;
-      border-bottom: 1px solid var(--light-yellow);
+      border-bottom: 1px solid $light-yellow;
       margin-bottom: 10px;
       text-transform: capitalize;
     }
@@ -694,7 +692,7 @@ input[type="number"] {
       position: relative;
       cursor: pointer;
       svg {
-        color: var(--light-yellow);
+        color: $light-yellow;
       }
       &-title {
         padding-top: 3px;
@@ -709,7 +707,7 @@ input[type="number"] {
         height: 1px;
         left: 0;
         bottom: 0;
-        background-color: var(--light-yellow);
+        background-color: $light-yellow;
         transition: all 0.5s ease-in-out;
       }
       @media (min-width: 1200px) {
@@ -733,7 +731,7 @@ input[type="number"] {
 }
 
 .dark {
-  background-color: var(--light-text-color);
+  background-color: $light-text-color;
   .product-slide {
     .product-name,
     .product-price,
@@ -748,7 +746,7 @@ input[type="number"] {
           color: #fff;
           @media (min-width: 1200px) {
             &:hover {
-              background-color: var(--light-yellow);
+              background-color: $light-yellow;
             }
           }
         }
@@ -758,44 +756,44 @@ input[type="number"] {
   .header {
     background-color: rgb(33, 33, 33);
     a {
-      color: var(--dark-text-color);
+      color: $dark-text-color;
       @media (min-width: 1200px) {
         &:hover {
-          color: var(--dark-yellow);
+          color: $dark-yellow;
           svg {
-            color: var(--dark-yellow);
+            color: $dark-yellow;
           }
         }
       }
     }
     .nav-btn {
       svg {
-        color: var(--dark-text-color);
+        color: $dark-text-color;
       }
     }
     .logo-name {
-      color: var(--dark-text-color);
+      color: $dark-text-color;
     }
   }
   .footer {
     background-color: rgb(33, 33, 33);
-    color: var(--dark-text-color);
+    color: $dark-text-color;
     h2,
     p {
-      color: var(--dark-text-color) !important;
+      color: $dark-text-color !important;
     }
     @media (min-width: 1200px) {
       h2:hover {
-        color: var(--dark-yellow);
+        color: $dark-yellow;
       }
     }
     .nav {
       &-item {
         @media (min-width: 1200px) {
           &:hover {
-            color: var(--dark-yellow);
+            color: $dark-yellow;
             svg {
-              color: var(--dark-yellow);
+              color: $dark-yellow;
             }
           }
         }
@@ -804,10 +802,10 @@ input[type="number"] {
 
     form {
       button {
-        border-color: var(--dark-yellow);
+        border-color: $dark-yellow;
         @media (min-width: 1200px) {
           &:hover {
-            border-color: var(--light-yellow);
+            border-color: $light-yellow;
           }
         }
       }
@@ -817,7 +815,7 @@ input[type="number"] {
         svg {
           @media (min-width: 1200px) {
             &:hover {
-              color: var(--dark-yellow);
+              color: $dark-yellow;
             }
           }
         }
@@ -826,43 +824,43 @@ input[type="number"] {
     .copyRight {
       background-color: rgb(63, 62, 62);
       &-text {
-        color: var(--dark-text-color);
+        color: $dark-text-color;
       }
     }
   }
   .section-title {
-    color: var(--dark-yellow);
+    color: $dark-yellow;
     &:after {
       background-color: rgba(205, 148, 83, 0.25);
     }
   }
   & ~ .offcanvas {
-    color: var(--dark-text-color);
+    color: $dark-text-color;
     background: #000 !important;
     .btn-close {
       color: #fff !important;
       --bs-btn-close-bg: url("../public/images/btn-close-dark.svg");
     }
     a {
-      border-color: var(--dark-yellow);
+      border-color: $dark-yellow;
       svg {
-        color: var(--dark-yellow);
+        color: $dark-yellow;
       }
     }
   }
   .form-control {
     background-color: #222;
-    color: var(--dark-text-color);
+    color: $dark-text-color;
   }
   .form-label {
     color: #fff;
   }
   ::placeholder {
     opacity: 1;
-    color: var(--dark-text-color) !important;
+    color: $dark-text-color !important;
   }
   ::-ms-input-place-holder {
-    color: var(--dark-text-color) !important;
+    color: $dark-text-color !important;
   }
   .Toastify__toast {
     color: #fff;
@@ -887,14 +885,14 @@ input[type="number"] {
       color: #fff;
       &-title {
         color: #fff;
-        border-color: var(--dark-yellow);
+        border-color: $dark-yellow;
       }
       .filter-link {
         &::after {
-          background-color: VAR(--dark-yellow);
+          background-color: $dark-yellow;
         }
         svg {
-          color: var(--dark-yellow);
+          color: $dark-yellow;
         }
       }
     }
