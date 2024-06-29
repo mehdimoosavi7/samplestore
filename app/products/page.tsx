@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import ProductItem from "../components/frequents/ProductItem";
-import useSWR from "swr";
 
 const Products = () => {
   const [data, setData] = useState<any | null>(null);
@@ -34,7 +33,7 @@ const Products = () => {
     if (category) {
       setProducts(
         data?.map((product: any) => {
-          if (category == product.category[0].name) {
+          if (category == product.category[0].name || category == "all") {
             return (
               <Col xl={4} xs={6} key={product._id}>
                 <ProductItem
@@ -88,6 +87,17 @@ const Products = () => {
       }
       return null;
     });
+
+  categories &&
+    categories.unshift(
+      <div className="filter-link" onClick={() => handleCategory("all")}>
+        <div>
+          <FontAwesomeIcon icon={faChevronRight} size="xs" />
+          <span className="filter-link-title">all</span>
+        </div>
+        <span className="filter-link-count">({data.length})</span>
+      </div>
+    );
 
   // const prices = data?.map((price: any) => {
   //   const categoryRange = price.category && price.category[0]?.name;
