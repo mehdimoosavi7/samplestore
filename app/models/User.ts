@@ -32,6 +32,14 @@ const userSchema = new Schema({
   comments: {
     type: Array,
   },
+  tokens: [
+    {
+      token: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
 export default mongoose.models.User || mongoose.model("User", userSchema);
