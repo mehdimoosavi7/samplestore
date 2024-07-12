@@ -33,7 +33,7 @@ const Products = () => {
     if (category) {
       setProducts(
         data?.map((product: any) => {
-          if (category == product.category[0].name) {
+          if (category == product.category[0].name || category == "all") {
             return (
               <Col xl={4} xs={6} key={product._id}>
                 <ProductItem
@@ -67,27 +67,30 @@ const Products = () => {
         acc.push({ name: curr, count: 1 });
       }
       return acc;
-    }, [])
-    .map((item: any, index: number) => {
-      const categoryName = item && item.name;
-      if (categoryName) {
-        return (
-          <div
-            key={index}
-            className="filter-link"
-            onClick={() => handleCategory(categoryName)}
-          >
-            <div>
-              <FontAwesomeIcon icon={faChevronRight} size="xs" />
-              <span className="filter-link-title">{categoryName}</span>
-            </div>
-            <span className="filter-link-count">({item.count})</span>
-          </div>
-        );
-      }
-      return null;
-    });
+    }, []);
 
+  categories?.unshift({ name: "all", count: data?.length });
+  
+  const categoryData = categories?.map((item: any, index: number) => {
+    const categoryName = item && item.name;
+    if (categoryName) {
+      return (
+        <div
+          key={index}
+          className="filter-link"
+          onClick={() => handleCategory(categoryName)}
+        >
+          <div>
+            <FontAwesomeIcon icon={faChevronRight} size="xs" />
+            <span className="filter-link-title">{categoryName}</span>
+          </div>
+          <span className="filter-link-count">({item.count})</span>
+        </div>
+      );
+    }
+    return null;
+  });
+  
   // const prices = data?.map((price: any) => {
   //   const categoryRange = price.category && price.category[0]?.name;
   //   if (categoryRange) {
@@ -119,7 +122,7 @@ const Products = () => {
             )}
             <div className="filter-articles">
               {categories && (
-                <FilterArticle title="Categories" content={categories} />
+                <FilterArticle title="Categories" content={categoryData} />
               )}
 
               {/* {categories && (
