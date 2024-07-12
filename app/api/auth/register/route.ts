@@ -11,7 +11,7 @@ export const POST = async (request : any) => {
     const newUser = new User({
       name,
       email,
-      password: hashedPassword,
+      pass: hashedPassword,
     });
     newUser.save();
     return new NextResponse("user has been created", { status: 201 });

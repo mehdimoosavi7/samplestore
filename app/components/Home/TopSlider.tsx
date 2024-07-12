@@ -13,7 +13,6 @@ import "swiper/css/effect-fade";
 import { Container } from "react-bootstrap";
 import Link from "next/link";
 import { API_URL } from "../frequents/API";
-import { Console } from "console";
 
 const TopSlider = () => {
   const fetcher = (...args: Array<string>) =>

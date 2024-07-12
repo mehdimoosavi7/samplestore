@@ -36,4 +36,3 @@ yarn-error.log*
 next-env.d.ts
 app/components/frequents/API.ts
 package-lock.json
-app/components/frequents/API.ts

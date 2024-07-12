@@ -9,6 +9,7 @@ import {
   faCartShopping,
   faCircle,
   faRightFromBracket,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Offcanvas } from "react-bootstrap";
 
@@ -80,14 +81,18 @@ const Header = () => {
             <FontAwesomeIcon icon={faCartShopping} />
           </Link>
 
-          {session.status == "authenticated" && (
+          {session.status == "authenticated" ? (
             <button onClick={() => signOut} className="text-red-500">
               <FontAwesomeIcon icon={faRightFromBracket} />
             </button>
+          ) : (
+            <Link className="text-black-500" href={"/profile/login"}>
+              <FontAwesomeIcon icon={faUser} />
+            </Link>
           )}
         </div>
       </nav>
-      <Offcanvas show={showNavbar} onHide={handleClose}> 
+      <Offcanvas show={showNavbar} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>My Store</Offcanvas.Title>
         </Offcanvas.Header>
@@ -96,7 +101,12 @@ const Header = () => {
             {links &&
               links.map((link) => {
                 return (
-                  <Link className="w-100 py-2" key={link.id} href={link.url} onClick={handleClose}>
+                  <Link
+                    className="w-100 py-2"
+                    key={link.id}
+                    href={link.url}
+                    onClick={handleClose}
+                  >
                     <FontAwesomeIcon icon={faCircle} size={"xs"} />
                     {link.title}
                   </Link>

@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import ProductItem from "../components/frequents/ProductItem";
-import useSWR from "swr";
 
 const Products = () => {
   const [data, setData] = useState<any | null>(null);
