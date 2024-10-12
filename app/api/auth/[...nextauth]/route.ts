@@ -1,6 +1,6 @@
 const { default: NextAuth } = require("next-auth/next");
 import User from "@/app/models/User";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 import connect from "@/app/utils/db";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
