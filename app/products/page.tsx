@@ -107,7 +107,7 @@ const Products = () => {
   return (
     <section className="products-page">
       <Container>
-        <Row>
+        <Row className="products-page-container">
           <Col lg={4} className="flex flex-col justify-start">
             {loading && (
               <SkeletonTheme baseColor="#ddd" highlightColor="#fff">
@@ -147,7 +147,7 @@ const Products = () => {
                 ? products
                 : data?.map((product: any) => {
                     return (
-                      <Col xl={4} xs={6} key={product._id}>
+                      <Col xl={4} sm={6} xs={12} key={product._id}>
                         <ProductItem
                           img={`/images/${product.pictures[0].src}`}
                           name={product.name}
